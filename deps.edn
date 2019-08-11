@@ -1,0 +1,13 @@
+{:paths ["src"]
+ :deps
+ {clojure-opennlp {:mvn/version "0.5.0"}
+  compojure {:mvn/version "1.6.1"}
+  hiccup {:mvn/version "1.0.5"}
+  ring {:mvn/version "1.7.1"}
+  ring/ring-defaults {:mvn/version "0.3.2"}
+  ring/ring-jetty-adapter {:mvn/version "1.7.1"}
+  integrant {:mvn/version "0.7.0"}
+  integrant/repl {:mvn/version "0.3.1"}}
+ :aliases
+ {:dev {:extra-paths ["dev"]}
+  :test {:extra-paths ["test"]}}}
