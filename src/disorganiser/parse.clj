@@ -9,11 +9,12 @@
 (defonce chunker (treebank/make-treebank-chunker "models/en-chunker.bin"))
 
 (defn sentence->tagged-words [sentence]
-  (let [tagged-entities (-> (tokenize sentence)
-                            pos-tag)]
+  (let [tagged-entities (pos-tag (tokenize sentence))]
     (map #(zipmap [:word :pos] %)
          tagged-entities)))
 
+(defn tagged-words->words [tagged-words]
+  (map :word tagged-words))
+
 (defn tagged-words->sentence [tagged-words]
-  (-> (map :word tagged-words)
-      detokenize))
+  (detokenize (map :word tagged-words)))
